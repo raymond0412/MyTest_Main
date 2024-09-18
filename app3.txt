@@ -1,0 +1,25 @@
+Protocol 2
+SyslogFacility AUTHPRIV
+PermitRootLogin without-password
+PasswordAuthentication yes
+ChallengeResponseAuthentication no
+GSSAPIAuthentication no
+GSSAPICleanupCredentials yes
+UsePAM yes
+AcceptEnv LANG LC_CTYPE LC_NUMERIC LC_TIME LC_COLLATE LC_MONETARY LC_MESSAGES
+AcceptEnv LC_PAPER LC_NAME LC_ADDRESS LC_TELEPHONE LC_MEASUREMENT
+AcceptEnv LC_IDENTIFICATION LC_ALL LANGUAGE
+AcceptEnv XMODIFIERS
+X11Forwarding yes
+X11UseLocalhost yes
+Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-gcm@openssh.com,aes256-gcm@openssh.com,aes128-cbc,aes192-cbc,aes256-cbc,blowfish-cbc,cast128-cbc,3des-cbc
+MACs umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-sha1
+Banner /etc/issue
+Subsystem   sftp    internal-sftp
+Match Group sftpusers
+#ChrootDirectory /usr/fiscal/aba
+ForceCommand internal-sftp
+X11Forwarding no
+AllowTcpForwarding no
+ClientAliveInterval 5m          # 5 minutes
+ClientAliveCountMax 2           # 2 times
